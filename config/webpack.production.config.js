@@ -13,7 +13,10 @@ module.exports = {
   optimization: {
     // 告知 webpack 使用 TerserPlugin 或其它在 optimization.minimizer定义的插件压缩 bundle。
     minimize: true,
-    chunkIds: 'deterministic'
+    runtimeChunk: {
+      name: 'runtime',
+    }
+    // splitChunks
   },
   devServer: {
     client: {
@@ -29,7 +32,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'WYY-MUSIC',
       filename: 'index.html',
-      template: resolve(__dirname, '../public/index-dev.html')
+      template: resolve(__dirname, '../public/index-dev.html'),
+      minify: true
     }),
     new ClenWebpackPlugin(),
     new OptimizeCssAssetsPlugin({

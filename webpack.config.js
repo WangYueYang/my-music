@@ -9,6 +9,12 @@ const defaultConfig = {
     filename: '[name].js',
     path: resolve(__dirname, './dist'),
   },
+  resolve: {
+    alias: {
+      '@componets': resolve(__dirname, 'src/components')
+    },
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.css']
+  },
   module: {
     rules: [
       {
