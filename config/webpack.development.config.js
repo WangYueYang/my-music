@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 
 module.exports = {
+  mode: "development",
   output: {
     assetModuleFilename: 'img/[name][ext]',
     filename: 'script/[name].bundle.js'
