@@ -15,7 +15,7 @@ module.exports = {
     },
     historyApiFallback: true,
     hot: true,
-    open: true,
+    // open: true,
     port: 8081,
   },
   devtool: 'source-map',

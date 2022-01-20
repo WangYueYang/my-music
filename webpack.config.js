@@ -11,7 +11,8 @@ const defaultConfig = {
   },
   resolve: {
     alias: {
-      '@componets': resolve(__dirname, 'src/components')
+      '@componets': resolve(__dirname, 'src/components'),
+      '@page': resolve(__dirname, 'src/page')
     },
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.css']
   },
@@ -49,4 +50,4 @@ const defaultConfig = {
   },
 };
 
-module.exports = merge(mergeConfig, defaultConfig);
+module.exports = merge(defaultConfig, mergeConfig);

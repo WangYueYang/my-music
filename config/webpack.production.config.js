@@ -18,16 +18,6 @@ module.exports = {
     }
     // splitChunks
   },
-  devServer: {
-    client: {
-      overlay: true,
-      progress: true
-    },
-    historyApiFallback: true,
-    hot: true,
-    // open: true,
-    port: 8081,
-  },
   plugins: [
     new HtmlWebpackPlugin({
       title: 'WYY-MUSIC',

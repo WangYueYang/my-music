@@ -14,13 +14,16 @@
     "module": "es6",
     "baseUrl": "./src",
     "paths": {
-      "@components/*": ["components/*"]
+      "@components/*": ["components/*"],
+      "@page/*": ["page/*"]
     },
     "outDir": "dist",
     "removeComments": true,
     "allowSyntheticDefaultImports": true,
     "jsx": "react",
-    "target": "es6"
+    "target": "es6",
+    // 这里还和 react-router@6有关？先记下。
+    "moduleResolution": "Node"
   },
   "include": ["src/**/*"]
 }
