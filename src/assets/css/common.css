@@ -8,3 +8,9 @@
     background-color: var(--colorBodyBg);
   }
 }
+
+
+body {
+  background-color: var(--colorBodyBg);
+  color: var(--colorText)
+}
