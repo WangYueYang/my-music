@@ -15,7 +15,8 @@
     "baseUrl": "./src",
     "paths": {
       "@components/*": ["components/*"],
-      "@page/*": ["page/*"]
+      "@page/*": ["page/*"],
+      "@assets/*": ["assets/*"],
     },
     "outDir": "dist",
     "removeComments": true,

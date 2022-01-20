@@ -12,7 +12,8 @@ const defaultConfig = {
   resolve: {
     alias: {
       '@componets': resolve(__dirname, 'src/components'),
-      '@page': resolve(__dirname, 'src/page')
+      '@page': resolve(__dirname, 'src/page'),
+      '@assets': resolve(__dirname, 'src/assets'),
     },
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.css']
   },
