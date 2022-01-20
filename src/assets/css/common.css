@@ -1,0 +1,10 @@
+:root {
+  --colorBlue: #335eea;
+  --colorBodyBg: #222222;
+  --colorNavBg: #222222db;
+  --colorText: #fff;
+  --defaultBox: {
+    color: var(--colorBlue);
+    background-color: var(--colorBodyBg);
+  }
+}
