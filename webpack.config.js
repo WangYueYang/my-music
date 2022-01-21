@@ -14,6 +14,7 @@ const defaultConfig = {
       '@components': resolve(__dirname, 'src/components'),
       '@page': resolve(__dirname, 'src/page'),
       '@assets': resolve(__dirname, 'src/assets'),
+      '@mock': resolve(__dirname, 'src/mock'),
     },
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.css']
   },

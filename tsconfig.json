@@ -17,6 +17,7 @@
       "@components/*": ["components/*"],
       "@page/*": ["page/*"],
       "@assets/*": ["assets/*"],
+      "@mock/*": ["mock/*"],
     },
     "outDir": "dist",
     "removeComments": true,

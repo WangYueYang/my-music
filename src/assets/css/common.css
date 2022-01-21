@@ -7,10 +7,13 @@
     color: var(--colorBlue);
     background-color: var(--colorBodyBg);
   }
+  --fontSize16: 16px;
+  --borderRidus: 15px;
+  --fontSize12: 12px;
+  --opacityMid: .68;
 }
-
 
 body {
   background-color: var(--colorBodyBg);
-  color: var(--colorText)
+  color: var(--colorText);
 }
