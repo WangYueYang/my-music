@@ -8,4 +8,17 @@
   background: var(--colorNavBg);
   width: 100%;
   color: var(--colorText);
+
+  & a {
+    font-size:18px;
+    padding: 8px 10px;
+    border-radius: 6px;
+    font-weight: var(--fontBold);
+    &.active {
+      color: var(--colorBlue);
+    }
+    &:hover {
+      background-color: #ffffff14;
+    }
+  }
 }

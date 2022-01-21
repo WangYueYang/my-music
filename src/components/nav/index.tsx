@@ -1,11 +1,11 @@
 import React from 'react';
-
+import { NavLink } from 'react-router-dom';
 import './index.css'
 
 const Nav = () => {
   return (
     <div className="nav">
-      首页
+      <NavLink to="/">首页</NavLink> 
     </div>
   )  
 }

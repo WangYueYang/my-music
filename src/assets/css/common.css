@@ -8,9 +8,10 @@
     background-color: var(--colorBodyBg);
   }
   --fontSize16: 16px;
-  --borderRidus: 15px;
+  --borderRidus: 10px;
   --fontSize12: 12px;
   --opacityMid: .68;
+  --fontBold: 700;
 }
 
 body {
