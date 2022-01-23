@@ -17,6 +17,7 @@
       "@components/*": ["components/*"],
       "@page/*": ["page/*"],
       "@assets/*": ["assets/*"],
+      "@api/*": ["api/*"],
       "@mock/*": ["mock/*"],
     },
     "outDir": "dist",
