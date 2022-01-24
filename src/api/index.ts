@@ -1,7 +1,6 @@
+import { post, get, paramsType } from './api-util';
 
 // /artist/list
-export const apiArtistList = () => {
-  fetch('/api/artist/list').then(res=> {
-    console.log(res);
-  })
-}
+export const apiArtistList = (): Promise<unknown> => {
+  return get('/api/artist/list')
+};
