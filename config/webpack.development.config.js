@@ -15,11 +15,16 @@ module.exports = {
     historyApiFallback: true,
     hot: true,
     // open: true,
-    // host: 'localhost',
+    host: '127.0.0.1',
     https: false,
     port: 8081,
     proxy: {
-      '/api': 'http://localhost:3000',
+      '/api': {
+        target: 'http://localhost:3000',
+        pathRewrite: { '^/api': '' },
+        secure: false,
+        changeOrigin: true,
+      }
     },
   },
   devtool: 'source-map',
