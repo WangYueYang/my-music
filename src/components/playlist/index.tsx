@@ -1,8 +1,8 @@
-import Playlist from "./playlist";
+import CoverRow from "./coverRow";
 import PlayItem from "./playItem";
 
 
 export {
-  Playlist,
+  CoverRow,
   PlayItem
 }

@@ -4,7 +4,7 @@ export interface ByAppleMusic {
   id: number
 }
 
-export const byAppleMusic: ByAppleMusic[] = [
+export const byAppleMusic = [
   {
     coverImgUrl:
       'https://p2.music.126.net/GvYQoflE99eoeGi9jG4Bsw==/109951165375336156.jpg',

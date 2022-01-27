@@ -4,14 +4,18 @@ import { ByAppleMusic } from '@mock/home';
 
 import './playItem.css';
 
+type PlayItemProps = {
+ id: number;
+ name: string;
+ picUrl?: string 
+}
 
-
-const PlayItem = ({coverImgUrl, name, id}: ByAppleMusic) => {
+const PlayItem = ({picUrl, name, id}: PlayItemProps) => {
   return (
     <div className="play-item">
       <div className="item-img">
         <img
-          src={coverImgUrl}
+          src={picUrl}
           alt=""
         />
       </div>
