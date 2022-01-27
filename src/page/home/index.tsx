@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { CoverRow } from '@components/playlist';
+import { CoverRow, PlayItem } from '@components/playlist';
 import './index.css';
 
-import { byAppleMusic } from '@mock/home';
 import { apiGetPersonalized } from '@api/index';
 import { IPersonalized } from '@api/api-type';
 
@@ -20,8 +19,19 @@ const Home = () => {
   return (
     <>
       <div className="main-page">
-        <CoverRow title="推荐歌单">
-          <div>123</div>
+        <CoverRow title="推荐歌单" type={'playlist'}>
+          <>
+            {playlist?.map((item) => {
+              return (
+                <PlayItem
+                  key={item.id}
+                  name={item.name}
+                  picUrl={item.picUrl}
+                  copywriter={item.copywriter}
+                />
+              );
+            })}
+          </>
         </CoverRow>
       </div>
     </>

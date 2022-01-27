@@ -1,5 +1,5 @@
 .play-item {
-  max-width: 18.5%;  
+  width: 18.5%;  
   & .item-img {
     border-radius: var(--borderRidus);
     overflow: hidden;

@@ -17,8 +17,15 @@
     }
   }
 
-  & .list {
+  & .content {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+
+    &.playlist {
+      & .play-item:nth-child(-n+5) {
+        margin-bottom: 40px;
+      }
+    }
   }
 }

@@ -1,26 +1,18 @@
 import React, { ReactChild, ReactNode} from 'react';
+import classNames from 'classnames';
 import { Link } from 'react-router-dom';
-import PlayItem from './playItem';
 
 import './coverRow.css';
 
-type ListArr = {
-  id: number;
-  type: number;
-  name: string;
-  copywriter: null | string;
-  picUrl: string;
-  highQuality: boolean;
-  alg: string;
-}
 
 type PlaylistProps = {
   title: string;
   moreHref?: string;
-  children?: JSX.Element
+  children?: JSX.Element;
+  type?: string;
 };
 
-const CoverRow = ({ title, moreHref = '', children }: PlaylistProps): JSX.Element => {
+const CoverRow = ({ title, moreHref = '', children, type }: PlaylistProps): JSX.Element => {
   return (
     <div className="cover-row">
       <div className="title">
@@ -31,7 +23,7 @@ const CoverRow = ({ title, moreHref = '', children }: PlaylistProps): JSX.Elemen
           </Link>
         )}
       </div>
-      <div className="content">
+      <div className={classNames('content', type)}>
         {children}
       </div>
     </div>

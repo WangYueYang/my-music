@@ -1,16 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ByAppleMusic } from '@mock/home';
 
 import './playItem.css';
 
 type PlayItemProps = {
- id: number;
  name: string;
- picUrl?: string 
+ picUrl?: string;
+ copywriter?: string | null;
 }
 
-const PlayItem = ({picUrl, name, id}: PlayItemProps) => {
+const PlayItem = ({picUrl, name, copywriter}: PlayItemProps) => {
   return (
     <div className="play-item">
       <div className="item-img">
@@ -24,7 +23,7 @@ const PlayItem = ({picUrl, name, id}: PlayItemProps) => {
       </p>
 
       <p className="item-describe">
-        <Link to="/">by Apple Music</Link>
+        {copywriter && <p>{copywriter}</p>}
       </p>
     </div>
   );
