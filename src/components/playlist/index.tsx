@@ -1,5 +1,5 @@
-import CoverRow from "./coverRow";
-import PlayItem from "./playItem";
+import CoverRow from "./CoverRow";
+import PlayItem from "./PlayItem";
 
 
 export {

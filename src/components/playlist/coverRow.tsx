@@ -2,17 +2,18 @@ import React, { ReactChild, ReactNode} from 'react';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 
-import './coverRow.css';
+import './CoverRow.css';
 
 
-type PlaylistProps = {
+type CoverRowProps = {
   title: string;
   moreHref?: string;
-  children?: JSX.Element;
+  children?: JSX.Element | never[];
   type?: string;
 };
 
-const CoverRow = ({ title, moreHref = '', children, type }: PlaylistProps): JSX.Element => {
+const CoverRow = ({ title, moreHref = '', children, type }: CoverRowProps): JSX.Element => {
+  console.log(children, title)
   return (
     <div className="cover-row">
       <div className="title">

@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import RouteFc from "./routes";
-import Nav from "@components/nav";
+import Nav from "@components/Nav";
 
 import '@assets/css/default.css'
 import '@assets/css/common.css'

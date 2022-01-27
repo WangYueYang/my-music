@@ -94,3 +94,7 @@ html{
 .dn{
   display: none;
 }
+img {
+  max-width: 100%;
+  font-size: 0;
+}

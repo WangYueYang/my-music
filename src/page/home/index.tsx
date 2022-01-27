@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { CoverRow, PlayItem } from '@components/playlist';
+import DailyPush from '@components/DailyPush';
 import './index.css';
 
 import { apiGetPersonalized } from '@api/index';
@@ -10,8 +11,6 @@ const Home = () => {
   const [limit, setLimit] = useState<number>(10);
   useEffect(() => {
     apiGetPersonalized({ limit }).then(({ data }) => {
-      console.log(data.result, 'res222');
-      // console.log(data)
       setPlaylist(data.result);
     });
   }, []);
@@ -19,7 +18,7 @@ const Home = () => {
   return (
     <>
       <div className="main-page">
-        <CoverRow title="推荐歌单" type={'playlist'}>
+        <CoverRow title="推荐歌单" type="playlist">
           <>
             {playlist?.map((item) => {
               return (
@@ -31,6 +30,12 @@ const Home = () => {
                 />
               );
             })}
+          </>
+        </CoverRow>
+        <CoverRow title="For You" type="for-you">
+          <>
+            <DailyPush />
+            <div>私人fm</div>
           </>
         </CoverRow>
       </div>

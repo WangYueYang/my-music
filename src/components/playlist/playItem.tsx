@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import './playItem.css';
+import './PlayItem.css';
 
 type PlayItemProps = {
  name: string;
@@ -9,7 +9,7 @@ type PlayItemProps = {
  copywriter?: string | null;
 }
 
-const PlayItem = ({picUrl, name, copywriter}: PlayItemProps) => {
+const PlayItem = ({picUrl, name, copywriter}: PlayItemProps): JSX.Element => {
   return (
     <div className="play-item">
       <div className="item-img">
@@ -23,7 +23,7 @@ const PlayItem = ({picUrl, name, copywriter}: PlayItemProps) => {
       </p>
 
       <p className="item-describe">
-        {copywriter && <p>{copywriter}</p>}
+        {copywriter}
       </p>
     </div>
   );
