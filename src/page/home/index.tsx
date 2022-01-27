@@ -4,13 +4,14 @@ import './index.css';
 
 import { byAppleMusic } from '@mock/home';
 import { apiGetPersonalized } from '@api/index'
+import { IPersonalized } from '@api/api-type';
 
 const Home = () => {
-  const [playlist, setPlaylist] = useState<unknown>([]);
+  const [playlist, setPlaylist] = useState<IPersonalized[]>();
   useEffect(() => {
-    apiGetPersonalized<{limit: number}>({limit: 10}).then(res => {
-      console.log(res, 'res')
-      setPlaylist(res)
+    apiGetPersonalized({limit: 10}).then(res => {
+      console.log(res, 'res222')
+      // setPlaylist(res.result)
     })
   }, [])
 
