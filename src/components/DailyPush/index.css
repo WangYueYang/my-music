@@ -9,6 +9,10 @@
   & > img {
     position: absolute;
     top: 0;
+    left: 0;
+    width: 100%;
+    animation: move 38s infinite;
+    animation-direction: alternate;
     z-index: -1;
   }
 
@@ -30,5 +34,14 @@
       line-height: 74px;
       letter-spacing: 10px;
     }
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
   }
 }
