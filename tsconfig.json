@@ -28,5 +28,5 @@
     // 这里还和 react-router@6有关？先记下。
     "moduleResolution": "Node"
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*", "img.d.ts"]
 }
