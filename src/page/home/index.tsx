@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { CoverRow, PlayItem } from '@components/playlist';
-import DailyPush from '@components/DailyPush';
+import { CoverRow, PlayItem, DailyPush, FMCard } from '@components/index';
 import './index.css';
 
 import { apiGetPersonalized } from '@api/index';
@@ -35,7 +34,7 @@ const Home = () => {
         <CoverRow title="For You" type="for-you">
           <>
             <DailyPush />
-            <div>私人fm</div>
+            <FMCard />
           </>
         </CoverRow>
       </div>

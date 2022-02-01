@@ -1,7 +1,7 @@
 .cover-row {
   margin-top: 32px;
 
-  & .title {
+  & > .title {
     display: flex;
     justify-content: space-between;    
     margin-bottom: 20px;

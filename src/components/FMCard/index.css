@@ -1,0 +1,79 @@
+.fm-card {
+  flex-basis: 48%;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: linear-gradient(to left top, #5efce8, #5484f1);
+  height: 198px;
+
+  & .fm-img {
+    height: 100%;
+    border-radius: 0.75rem;
+    margin-right: 1.2rem;
+  }
+
+  & .fm-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    & .info {
+      & .title {
+        font-size: 1.6rem;
+        font-weight: var(--fontBold);
+        margin-bottom: 0.6rem;
+      }
+
+      & .author {
+        opacity: var(--opacityMid);
+      }
+    }
+
+    & .controls {
+      display: flex;
+      justify-content: space-between;
+
+      & .buttons {
+        display: flex;
+        & button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 8px;
+          background: transparent;
+          margin: 4px;
+          border-radius: 25%;
+          transition: 0.2s;
+
+          &:hover {
+            background: #73b5e3bf;
+          }
+        }
+
+        & .icons {
+          width: 22px;
+          height: 22px;
+        }
+      }
+
+      & .card-name {
+        font-size: 1rem;
+        opacity: .38;
+        display: flex;
+        align-items: center;
+        font-weight: var(--fontBold);
+        user-select: none;
+
+        & .icon {
+          width: 18px;
+          height: 18px;
+          margin-right: 6px;
+          margin-top: -3px;
+        }
+      }
+    }
+  }
+}
