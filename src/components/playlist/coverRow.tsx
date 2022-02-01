@@ -1,9 +1,8 @@
-import React, { ReactChild, ReactNode} from 'react';
+import React, { ReactChild, ReactNode } from 'react';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 
 import './CoverRow.css';
-
 
 type CoverRowProps = {
   title: string;
@@ -12,8 +11,12 @@ type CoverRowProps = {
   type?: string;
 };
 
-const CoverRow = ({ title, moreHref = '', children, type }: CoverRowProps): JSX.Element => {
-  console.log(children, title)
+const CoverRow = ({
+  title,
+  moreHref = '',
+  children,
+  type,
+}: CoverRowProps): JSX.Element => {
   return (
     <div className="cover-row">
       <div className="title">
@@ -24,9 +27,7 @@ const CoverRow = ({ title, moreHref = '', children, type }: CoverRowProps): JSX.
           </Link>
         )}
       </div>
-      <div className={classNames('content', type)}>
-        {children}
-      </div>
+      <div className={classNames('content', type)}>{children}</div>
     </div>
   );
 };
