@@ -46,9 +46,14 @@ const defaultConfig = {
         ]
       },
       {
-        test: /\.(png|jpg|jpeg|svg|gif|eot|woff|woff2|ttf|webp)$/,
+        test: /\.(png|jpg|jpeg|gif|eot|woff|woff2|ttf|webp)$/,
         type: 'asset'
       },
+      {
+        test: /\.svg$/,
+        exclude: /node_module/,
+        loader: 'svg-sprite-loader'
+      }
     ],
   },
 };

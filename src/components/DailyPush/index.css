@@ -35,6 +35,11 @@
       letter-spacing: 10px;
     }
   }
+
+  & .play-button {
+    align-self: flex-end;
+    margin: 0 1.6rem 1.4rem 0;
+  }
 }
 
 @keyframes move {
