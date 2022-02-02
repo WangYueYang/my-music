@@ -1,10 +1,10 @@
-export interface IResponse{
+export interface Response{
   code: number;
   category?: number;
   hasTaste?: boolean;
 }
 
-export interface IPersonalized {
+export interface Personalized {
   id: number;
   type: number;
   name: string;
@@ -18,7 +18,7 @@ export interface IPersonalized {
   alg: string;
 }
 
-export interface IPersonalizedType extends IResponse {
-  result: IPersonalized[]
+export interface PersonalizedType extends Response {
+  result: Personalized[]
 }
 

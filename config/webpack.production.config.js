@@ -1,13 +1,13 @@
 const { resolve } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ClenWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
   mode: 'production',
   output: {
-    assetModuleFilename: 'img/[name].[contenthash5].[ext]',
-    filename: 'script/[name].[contenthash8].bundle.js',
+    assetModuleFilename: 'img/[name].[contenthash].[ext]',
+    filename: 'script/[name].[contenthash].bundle.js',
     publicPath: '/assets'
   },
   optimization: {
@@ -25,7 +25,7 @@ module.exports = {
       template: resolve(__dirname, '../public/index-dev.html'),
       minify: true
     }),
-    new ClenWebpackPlugin(),
+    new CleanWebpackPlugin(),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.optimize\.css$/g,
       cssProcessor: require('cssnano'),

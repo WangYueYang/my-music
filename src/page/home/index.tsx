@@ -3,10 +3,10 @@ import { CoverRow, PlayItem, DailyPush, FMCard } from '@components/index';
 import './index.css';
 
 import { apiGetPersonalized } from '@api/index';
-import { IPersonalized } from '@api/api-type';
+import { Personalized } from '@api/api-type';
 
 const Home = () => {
-  const [playlist, setPlaylist] = useState<IPersonalized[]>();
+  const [playlist, setPlaylist] = useState<Personalized[]>();
   const [limit, setLimit] = useState<number>(10);
   useEffect(() => {
     apiGetPersonalized({ limit }).then(({ data }) => {
