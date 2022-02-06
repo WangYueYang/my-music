@@ -15,7 +15,7 @@
     "baseUrl": "./src",
     "paths": {
       "@components/*": ["components/*"],
-      "@page/*": ["page/*"],
+      "@pages/*": ["pages/*"],
       "@assets/*": ["assets/*"],
       "@api/*": ["api/*"],
       "@mock/*": ["mock/*"],

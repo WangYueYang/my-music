@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 
 import './index.css'
 
-const Home = lazy(() => import('@page/home'))
+const Home = lazy(() => import('../pages/home'))
 
 const RouteFc = () => {
 
