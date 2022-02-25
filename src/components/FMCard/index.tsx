@@ -1,7 +1,7 @@
 import React from 'react';
 import { Play, Next, ThumbsDown, Fm } from '@assets/img/icons';
 import SvgIcon from '@components/SvgIcon';
-import FMCardImg from '@assets/img/fm-card-img.jpeg'
+import FMCardImg from '@assets/img/fm-card-img.jpeg';
 
 import './index.css';
 

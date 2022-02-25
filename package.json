@@ -6,7 +6,9 @@
   "scripts": {
     "client:dev": "scripty",
     "client:prod": "scripty",
-    "client:server": "scripty"
+    "client:server": "scripty",
+    "eslint": "eslint src --ext .tsx,.ts",
+    "eslint:fix": "eslint --fix"
   },
   "repository": {
     "type": "git",
@@ -23,9 +25,13 @@
     "@babel/preset-react": "^7.16.7",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.12.1",
+    "@typescript-eslint/parser": "^5.12.1",
     "babel-loader": "^8.2.3",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.5.1",
+    "eslint": "^8.9.0",
+    "eslint-plugin-react": "^7.29.0",
     "html-webpack-plugin": "^5.5.0",
     "optimize-css-assets-webpack-plugin": "^6.0.1",
     "postcss-cli": "^9.1.0",

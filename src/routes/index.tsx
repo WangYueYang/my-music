@@ -1,12 +1,11 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import './index.css'
+import './index.css';
 
-const Home = lazy(() => import('../pages/home'))
+const Home = lazy(() => import('../pages/home'));
 
 const RouteFc = () => {
-
   return (
     <Suspense fallback={<div>loading...</div>}>
       <div className="main">
@@ -15,7 +14,7 @@ const RouteFc = () => {
         </Routes>
       </div>
     </Suspense>
-  )
-}
+  );
+};
 
 export default RouteFc;

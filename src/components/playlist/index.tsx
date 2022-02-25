@@ -1,8 +1,4 @@
-import CoverRow from "./CoverRow";
-import PlayItem from "./PlayItem";
+import CoverRow from './CoverRow';
+import PlayItem from './PlayItem';
 
-
-export {
-  CoverRow,
-  PlayItem
-}
+export { CoverRow, PlayItem };
