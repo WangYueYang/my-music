@@ -8,7 +8,7 @@ import './index.css';
 type PlayButtonProps = {
   className?: string;
 };
-
+console.log('test')
 const PlayButton = ({ className }: PlayButtonProps): JSX.Element => {
   return (
     <div className={classNames('play-button', className)}>
