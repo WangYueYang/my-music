@@ -13,7 +13,7 @@ const Home = () => {
       setPlaylist(data.result);
     });
   }, []);
-
+console.log('xxx')
   return (
     <>
       <div className="main-page">
