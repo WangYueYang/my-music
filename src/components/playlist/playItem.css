@@ -1,5 +1,5 @@
 .play-item {
-  width: 18.5%;  
+  width: 18.5%;
 
   &.actor-item {
     text-align: center;
@@ -17,14 +17,42 @@
   }
 
   & .item-img {
-    border-radius: var(--borderRidus);
-    overflow: hidden;
+    /* overflow: hidden; */
     font-size: 0px;
     margin-bottom: 10px;
     cursor: pointer;
+    position: relative;
+
+    &:hover .play-button {
+      opacity: 1;
+      visibility: visible;
+    }
+    &:hover .bg {
+      display: block;
+    }
+    & .play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s;
+    }
+
+    & .bg {
+      position: absolute;
+      z-index: -1;
+      left: 0;
+      top: 10px;
+      transform: scale(.95);
+      filter: blur(16px) opacity(0.6);
+      display: none;
+    }
 
     & img {
       max-width: 100%;
+      border-radius: var(--borderRidus);
     }
   }
 
