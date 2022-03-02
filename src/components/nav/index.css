@@ -1,7 +1,8 @@
 .nav {
   height: 64px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 0 10vw;
   align-items: center;
   position: fixed;
   top: 0;
@@ -9,6 +10,7 @@
   width: 100%;
   color: var(--colorText);
   z-index: 10;
+  box-sizing: border-box;
   
   & a {
     font-size:18px;

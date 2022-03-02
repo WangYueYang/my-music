@@ -12,6 +12,7 @@
   --fontSize12: 12px;
   --opacityMid: .68;
   --fontBold: 700;
+  --optionsBg: hsla(0,0%,100%,0.08);
 }
 
 body {
