@@ -37,6 +37,51 @@ const Home = () => {
             <FMCard />
           </>
         </CoverRow>
+        <CoverRow title="推荐艺人" type="actor-list">
+          <>
+            {playlist?.map((item, i) => {
+              if (i > 5) {
+                return null;
+              }
+              return (
+                <PlayItem
+                  key={item.id}
+                  name={item.name}
+                  picUrl={item.picUrl}
+                  className="actor-item"
+                />
+              );
+            })}
+          </>
+        </CoverRow>
+        <CoverRow title="新专速递" type="playlist">
+          <>
+            {playlist?.map((item) => {
+              return (
+                <PlayItem
+                  key={item.id}
+                  name={item.name}
+                  picUrl={item.picUrl}
+                  copywriter={item.copywriter}
+                />
+              );
+            })}
+          </>
+        </CoverRow>
+        <CoverRow title="排行榜" type="playlist">
+          <>
+            {playlist?.map((item) => {
+              return (
+                <PlayItem
+                  key={item.id}
+                  name={item.name}
+                  picUrl={item.picUrl}
+                  copywriter={item.copywriter}
+                />
+              );
+            })}
+          </>
+        </CoverRow>
       </div>
     </>
   );

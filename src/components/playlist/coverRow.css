@@ -1,5 +1,5 @@
 .cover-row {
-  margin-top: 32px;
+  margin-top: 54px;
 
   & > .title {
     display: flex;
@@ -25,6 +25,13 @@
     &.playlist {
       & .play-item:nth-child(-n+5) {
         margin-bottom: 40px;
+      }
+    }
+
+    &.actor-list {
+      & .actor-item {
+        flex: 1;
+        margin-right: 20px;
       }
     }
   }

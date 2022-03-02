@@ -1,5 +1,21 @@
 .play-item {
   width: 18.5%;  
+
+  &.actor-item {
+    text-align: center;
+    font-size: var(--fontSize16);
+
+    & .item-img {
+      & img {
+        border-radius: 50%;
+      }
+    }
+
+    & .item-title {
+      margin-top: 12px;
+    }
+  }
+
   & .item-img {
     border-radius: var(--borderRidus);
     overflow: hidden;
