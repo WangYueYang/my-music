@@ -11,11 +11,23 @@
   color: var(--colorText);
   z-index: 10;
   box-sizing: border-box;
-  
+
+  & > div {
+    flex: 1;
+    display: flex;
+  }
+  & .nav-link {
+    justify-content: center;
+  }
+  & .nav-right {
+    justify-content: flex-end;
+    align-items: center;
+  }
   & a {
-    font-size:18px;
+    font-size: 18px;
     padding: 8px 10px;
     border-radius: 6px;
+    margin: 0 12px;
     font-weight: var(--fontBold);
     &.active {
       color: var(--colorBlue);

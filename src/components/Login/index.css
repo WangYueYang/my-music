@@ -1,0 +1,18 @@
+
+.login-icon {
+  & path {
+    fill: #fff;
+  }
+}
+
+.login {
+  & .login-icon {
+    margin-left: 10px;
+    cursor: pointer;
+    opacity: .8;
+  }
+
+  &:hover .login-icon {
+    opacity: 1;
+  }
+}
