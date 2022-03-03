@@ -6,7 +6,7 @@ import { apiGetPersonalized } from '@api/index';
 import { Personalized } from '@api/api-type';
 
 const Home = () => {
-  const [playlist, setPlaylist] = useState<Personalized[]>();
+  const [playlist, setPlaylist] = useState<Personalized[]>([]);
   const [limit, setLimit] = useState<number>(10);
   useEffect(() => {
     apiGetPersonalized({ limit }).then(({ data }) => {
@@ -19,7 +19,7 @@ const Home = () => {
       <div className="main-page">
         <CoverRow title="推荐歌单" type="playlist">
           <>
-            {playlist?.map((item) => {
+            {playlist.map((item) => {
               return (
                 <PlayItem
                   key={item.id}
@@ -39,7 +39,7 @@ const Home = () => {
         </CoverRow>
         <CoverRow title="推荐艺人" type="actor-list">
           <>
-            {playlist?.map((item, i) => {
+            {playlist.map((item, i) => {
               if (i > 5) {
                 return null;
               }
@@ -56,7 +56,7 @@ const Home = () => {
         </CoverRow>
         <CoverRow title="新专速递" type="playlist">
           <>
-            {playlist?.map((item) => {
+            {playlist.map((item) => {
               return (
                 <PlayItem
                   key={item.id}
@@ -70,7 +70,7 @@ const Home = () => {
         </CoverRow>
         <CoverRow title="排行榜" type="playlist">
           <>
-            {playlist?.map((item) => {
+            {playlist.map((item) => {
               return (
                 <PlayItem
                   key={item.id}
