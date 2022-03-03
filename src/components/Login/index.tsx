@@ -1,5 +1,5 @@
-import React, { useState, useEffect, BaseSyntheticEvent } from 'react';
-import { LoginIcon, LoginIcon2 } from '@assets/img/icons';
+import React, { useState, useEffect, MouseEvent } from 'react';
+import { LoginIcon2 } from '@assets/img/icons';
 import SvgIcon from '../SvgIcon';
 
 import './index.css';
@@ -21,7 +21,7 @@ const LoginComp = (): JSX.Element => {
     };
   });
 
-  const showLogin = (e: BaseSyntheticEvent): void => {
+  const showLogin = (e: MouseEvent<HTMLImageElement>): void => {
     e.stopPropagation();
     setShow(true);
   };
