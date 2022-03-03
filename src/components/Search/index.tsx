@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, FocusEvent } from 'react';
 import classNames from 'classnames';
 import { SearchIcon } from '@assets/img/icons';
 import SvgIcon from '../SvgIcon';
@@ -14,7 +14,7 @@ const Search = (): JSX.Element => {
           type="text"
           className="search-inp"
           placeholder={isFocus ? '' : 'Search'}
-          onFocus={(e: InputEventInit) => {
+          onFocus={(e: FocusEvent<HTMLInputElement>) => {
             setIsFocus(true);
           }}
           onBlur={() => {
