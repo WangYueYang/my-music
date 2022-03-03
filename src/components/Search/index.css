@@ -5,7 +5,7 @@
   height: 32px;
   border-radius: 8px;
   width: 200px;
-  background: var(--optionsBg);
+  background: var(--optionsBg08);
 
   &.active {
     & svg {
@@ -13,7 +13,7 @@
     }
   }
 
-  & svg {
+  & .icon{
     margin: 0 6px 0 8px;
     width: 15px;
     height: 15px;

@@ -6,13 +6,55 @@
 }
 
 .login {
-  & .login-icon {
+  position: relative;
+
+  & .login-avatar {
     margin-left: 10px;
+    border-radius:50%;
+    width: 30px;
+    height: 30px;
     cursor: pointer;
-    opacity: .8;
+    opacity: .7;
   }
 
   &:hover .login-icon {
     opacity: 1;
+  }
+
+  & .login-nav {
+    width: 125px;
+    border:1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 6px;
+    position: absolute;
+    top: 60%;
+    left: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 6px 12px -4px rgb(0 0 0 / 8%);
+    background: rgba(36, 36, 36, 0.78);
+    backdrop-filter: blur(16px) contrast(120%);
+
+
+    & .login-tag {
+      font-weight: var(--fontBold);
+      font-size: 14px;
+      padding: 10px;
+      border-radius: 7px;
+      color: var(--colorText);
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      &:hover { 
+        background: var(--optionsBg12);
+      }
+        
+      & .login-icon {
+        opacity: 1;
+        width: 16px;
+        height: 16px;
+        margin-right: 5px;
+      }
+    }
   }
 }
