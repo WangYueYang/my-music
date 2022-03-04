@@ -1,7 +1,8 @@
-export interface Response{
+export interface Response {
   code: number;
   category?: number;
   hasTaste?: boolean;
+  message?: string;
 }
 
 export interface Personalized {
@@ -19,7 +20,7 @@ export interface Personalized {
 }
 
 export interface PersonalizedType extends Response {
-  result: Personalized[]
+  result: Personalized[];
 }
 
 /* 
@@ -29,5 +30,12 @@ export interface LoginQRCodeKeyType extends Response {
   data: {
     code: number;
     unikey: string;
-  }
+  };
+}
+
+/* 
+    apiCheckQRCodeLogin: /api/login/qr/check
+ */
+export interface CheckQRCodeLoginType extends Response {
+  cookie: string;
 }
