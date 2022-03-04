@@ -16,6 +16,7 @@ const defaultConfig = {
       '@assets': resolve(__dirname, 'src/assets'),
       '@api': resolve(__dirname, 'src/api'),
       '@mock': resolve(__dirname, 'src/mock'),
+      '@utils': resolve(__dirname, 'src/utils')
     },
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.css']
   },

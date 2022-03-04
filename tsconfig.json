@@ -19,6 +19,7 @@
       "@assets/*": ["assets/*"],
       "@api/*": ["api/*"],
       "@mock/*": ["mock/*"],
+      "@utils/*": ["utils/*"],
     },
     "outDir": "dist",
     "removeComments": true,

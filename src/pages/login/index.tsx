@@ -1,15 +1,22 @@
-import React, { useState, useEffect, useRef, ReactElement } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import QRCode from 'qrcode.react';
 import { apiLoginQRCodeKey, apiCheckQRCodeLogin } from '@api/index';
+import { setCookie } from '@utils/index';
 import './index.css';
 
 import LoginLogo from '@assets/img/login-music.png';
+
+type LoginType = {
+  code: number;
+  cookie: string;
+};
 
 const LoginPage = (): JSX.Element => {
   const [QRCodeKey, setQRCodeKey] = useState<string>('');
   const [QRUrl, setQRUrl] = useState<string>('');
   const [text, setText] = useState<string>('打开网易云音乐APP扫码登录');
-
+  const navigate = useNavigate();
   let timer: NodeJS.Timeout | null = null;
   const timerRef: { current: NodeJS.Timeout | null } = useRef(null);
 
@@ -32,11 +39,22 @@ const LoginPage = (): JSX.Element => {
     checkQRCodeLogin();
   }, [QRCodeKey]);
 
+  const handleLoginResponse = (res: LoginType) => {
+    if (res.code === 200) {
+      setCookie(res.cookie);
+      navigate('/');
+    }
+  };
+
   const checkQRCodeLogin = (): void => {
     clearInterval(timerRef.current as NodeJS.Timeout);
     timer = setInterval(() => {
       if (!QRCodeKey) return;
       apiCheckQRCodeLogin(QRCodeKey).then(({ data }) => {
+        const res: LoginType = {
+          code: 0,
+          cookie: '',
+        };
         switch (data.code) {
           case 800:
             getQRCode();
@@ -48,6 +66,10 @@ const LoginPage = (): JSX.Element => {
           case 803:
             clearInterval(timerRef.current as NodeJS.Timeout);
             setText('登录成功，请稍等...');
+            res.code = 200;
+            res.cookie = data.cookie.replace('HTTPOnly', '');
+            handleLoginResponse(res);
+            break;
         }
       });
     }, 1000);
