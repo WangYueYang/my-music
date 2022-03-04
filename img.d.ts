@@ -7,3 +7,5 @@ declare module '*.jpeg' {
   const content: React.ImgHTMLAttributes<HTMLImageElement>;
   export default content;
 }
+
+declare module '*.png'

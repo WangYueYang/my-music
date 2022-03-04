@@ -22,3 +22,12 @@ export interface PersonalizedType extends Response {
   result: Personalized[]
 }
 
+/* 
+  /login/qr/key
+*/
+export interface LoginQRCodeKeyType extends Response {
+  data: {
+    code: number;
+    unikey: string;
+  }
+}

@@ -14,6 +14,7 @@
   --fontBold: 700;
   --optionsBg08: hsla(0,0%,100%,0.08);
   --optionsBg12: rgba(255, 255, 255, 0.12);
+  --colorPrimaryBg: #bbcdff;
 }
 
 body {

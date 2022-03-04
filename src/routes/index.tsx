@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import './index.css';
 
 const Home = lazy(() => import('../pages/home'));
+const LoginPage = lazy(() => import('../pages/login'));
 
 const RouteFc = () => {
   return (
@@ -11,6 +12,7 @@ const RouteFc = () => {
       <div className="main">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/login" element={<LoginPage />} />
         </Routes>
       </div>
     </Suspense>
