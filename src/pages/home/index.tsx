@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { useRecoilValue } from 'recoil';
 import { CoverRow, PlayItem, DailyPush, FMCard } from '@components/index';
+import { listState } from '@store/index';
 import './index.css';
 
 import { apiGetPersonalized } from '@api/index';
@@ -13,10 +15,12 @@ const Home = () => {
       setPlaylist(data.result);
     });
   }, []);
-
+  const list = useRecoilValue(listState);
+  console.log('list', list );
   return (
     <>
       <div className="main-page">
+        {list}
         <CoverRow title="推荐歌单" type="playlist">
           <>
             {playlist.map((item) => {

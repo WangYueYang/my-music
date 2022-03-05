@@ -20,6 +20,7 @@
       "@api/*": ["api/*"],
       "@mock/*": ["mock/*"],
       "@utils/*": ["utils/*"],
+      "@store/*": ["store/*"],
     },
     "outDir": "dist",
     "removeComments": true,

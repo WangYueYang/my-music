@@ -16,9 +16,10 @@ const defaultConfig = {
       '@assets': resolve(__dirname, 'src/assets'),
       '@api': resolve(__dirname, 'src/api'),
       '@mock': resolve(__dirname, 'src/mock'),
-      '@utils': resolve(__dirname, 'src/utils')
+      '@utils': resolve(__dirname, 'src/utils'),
+      '@store': resolve(__dirname, 'src/store')
     },
-    extensions: ['.js', '.jsx', '.ts', '.tsx', '.css']
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.css', '.d.ts']
   },
   module: {
     rules: [
