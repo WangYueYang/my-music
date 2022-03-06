@@ -1,6 +1,7 @@
 import React, { useState, useEffect, MouseEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { LoginIcon2 } from '@assets/img/icons';
+import { isLogin } from '@utils/index';
 import SvgIcon from '../SvgIcon';
 
 import './index.css';
@@ -10,7 +11,7 @@ const avatar =
 const LoginComp = (): JSX.Element => {
   const [show, setShow] = useState<boolean>(false);
   const navigate = useNavigate();
-
+  const loginType = isLogin();
   const hideLogin = () => {
     setShow(false);
   };
@@ -37,10 +38,17 @@ const LoginComp = (): JSX.Element => {
       <img src={avatar} alt="" className="login-avatar" onClick={showLogin} />
       {show && (
         <div className="login-nav">
-          <div className="login-tag" onClick={goToLogin}>
-            <SvgIcon icon={LoginIcon2} className="login-icon" />
-            登录
-          </div>
+          {!loginType ? (
+            <div className="login-tag" onClick={goToLogin}>
+              <SvgIcon icon={LoginIcon2} className="login-icon" />
+              登录
+            </div>
+          ) : (
+            <div className="login-tag">
+              <SvgIcon icon={LoginIcon2} className="login-icon" />
+              登出
+            </div>
+          )}
         </div>
       )}
     </div>

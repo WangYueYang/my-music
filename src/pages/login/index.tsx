@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useSetRecoilState } from 'recoil';
 import { useNavigate } from 'react-router-dom';
 import QRCode from 'qrcode.react';
 import { apiLoginQRCodeKey, apiCheckQRCodeLogin } from '@api/index';
 import { setCookie } from '@utils/index';
+import { isLogin } from '@store/index';
 import './index.css';
 
 import LoginLogo from '@assets/img/login-music.png';
@@ -19,7 +21,7 @@ const LoginPage = (): JSX.Element => {
   const navigate = useNavigate();
   let timer: NodeJS.Timeout | null = null;
   const timerRef: { current: NodeJS.Timeout | null } = useRef(null);
-
+  const setLoginType = useSetRecoilState(isLogin);
   useEffect(() => {
     getQRCode();
     return () => {
@@ -43,6 +45,7 @@ const LoginPage = (): JSX.Element => {
     if (res.code === 200) {
       setCookie(res.cookie);
       navigate('/');
+      setLoginType(true);
     }
   };
 
