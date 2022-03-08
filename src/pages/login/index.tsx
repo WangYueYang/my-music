@@ -1,10 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useSetRecoilState } from 'recoil';
+import { useSetRecoilState, useRecoilState } from 'recoil';
 import { useNavigate } from 'react-router-dom';
 import QRCode from 'qrcode.react';
-import { apiLoginQRCodeKey, apiCheckQRCodeLogin } from '@api/index';
+import {
+  apiLoginQRCodeKey,
+  apiCheckQRCodeLogin,
+  apiGetUserAccount,
+} from '@api/index';
 import { setCookie } from '@utils/index';
-import { isLogin } from '@store/index';
+import { isLoginState } from '@store/index';
 import './index.css';
 
 import LoginLogo from '@assets/img/login-music.png';
@@ -21,7 +25,8 @@ const LoginPage = (): JSX.Element => {
   const navigate = useNavigate();
   let timer: NodeJS.Timeout | null = null;
   const timerRef: { current: NodeJS.Timeout | null } = useRef(null);
-  const setLoginType = useSetRecoilState(isLogin);
+  const setLoginType = useSetRecoilState(isLoginState);
+
   useEffect(() => {
     getQRCode();
     return () => {
@@ -41,12 +46,19 @@ const LoginPage = (): JSX.Element => {
     checkQRCodeLogin();
   }, [QRCodeKey]);
 
-  const handleLoginResponse = (res: LoginType) => {
+  const handleLoginResponse = (res: LoginType): void => {
     if (res.code === 200) {
       setCookie(res.cookie);
       navigate('/');
       setLoginType(true);
+      getUserAccount();
     }
+  };
+
+  const getUserAccount = (): void => {
+    apiGetUserAccount().then(({ data }) => {
+      localStorage.setItem('user', JSON.stringify(data.profile));
+    });
   };
 
   const checkQRCodeLogin = (): void => {

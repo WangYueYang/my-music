@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useRecoilValue } from 'recoil';
 import { CoverRow, PlayItem, DailyPush, FMCard } from '@components/index';
-import { listState } from '@store/index';
 import './index.css';
 
 import { apiGetPersonalized } from '@api/index';
 import { Personalized } from '@api/api-type';
-
+import { userAccountState } from '@store/index';
 const Home = () => {
   const [playlist, setPlaylist] = useState<Personalized[]>([]);
   const [limit, setLimit] = useState<number>(10);
@@ -15,12 +14,11 @@ const Home = () => {
       setPlaylist(data.result);
     });
   }, []);
-  const list = useRecoilValue(listState);
-  console.log('list', list );
+  const user = useRecoilValue(userAccountState);
+  console.log(user);
   return (
     <>
       <div className="main-page">
-        {list}
         <CoverRow title="推荐歌单" type="playlist">
           <>
             {playlist.map((item) => {

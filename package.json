@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/WangYueYang/my-music#readme",
   "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.17.0",
     "@babel/preset-react": "^7.16.7",
     "@types/js-cookie": "^3.0.1",
     "@types/react": "^17.0.38",
@@ -54,6 +55,7 @@
     "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.16.8",
     "@babel/preset-typescript": "^7.16.7",
+    "@babel/runtime": "^7.17.2",
     "@commitlint/cli": "^16.2.1",
     "@commitlint/config-conventional": "^16.2.1",
     "@types/qrcode.react": "^1.0.2",
