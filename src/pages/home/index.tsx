@@ -4,10 +4,11 @@ import { CoverRow, PlayItem, DailyPush, FMCard } from '@components/index';
 import './index.css';
 
 import { Personalized } from '@api/api-type';
-import { userAccountState, personalizedList } from '@store/index';
+import { userAccountState, personalizedList, artistsList } from '@store/index';
 const Home = () => {
   const [playlist, setPlaylist] = useState<Personalized[]>([]);
   const personalized = useRecoilValue(personalizedList);
+  const artists = useRecoilValue(artistsList);
   const user = useRecoilValue(userAccountState);
 
   return (
@@ -35,10 +36,7 @@ const Home = () => {
         </CoverRow>
         <CoverRow title="推荐歌手" type="actor-list">
           <>
-            {playlist.map((item, i) => {
-              if (i > 5) {
-                return null;
-              }
+            {artists.map((item, i) => {
               return (
                 <PlayItem
                   key={item.id}

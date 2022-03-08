@@ -5,6 +5,7 @@ import {
   LoginQRCodeKeyType,
   CheckQRCodeLoginType,
   UserAccountType,
+  TopArtistType,
 } from './api-type';
 
 export * from './api-type';
@@ -57,5 +58,5 @@ export const apiGetTopArtists = (params: {
   limit: number;
   offset?: number;
 }) => {
-  return get('/top/artists', params);
+  return get<TopArtistType>('/top/artists', params);
 };

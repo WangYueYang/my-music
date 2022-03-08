@@ -69,3 +69,20 @@ export interface UserAccountType extends Response {
   account: Account;
   profile: Profile;
 }
+
+// apiGetTopArtists
+export interface TopArtist {
+  name: string;
+  id: number;
+  picId: number;
+  img1v1Id: number;
+  briefDesc: string;
+  picUrl: string;
+  img1v1Url: string;
+  albumSize: number;
+  alias: string[];
+}
+
+export interface TopArtistType extends Response {
+  artists: TopArtist[];
+}

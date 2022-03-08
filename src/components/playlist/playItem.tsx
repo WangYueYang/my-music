@@ -22,8 +22,8 @@ const PlayItem = ({
     <div className={classNames(className, 'play-item')}>
       <div className="item-img">
         <PlayButton />
-        <img src={picUrl} alt="" />
-        <img src={picUrl} alt="" className="bg" />
+        <img src={`${picUrl}?param=220y220`} alt="" />
+        <img src={`${picUrl}?param=220y220`} alt="" className="bg" />
       </div>
       <p className="item-title">
         <Link to="/">{name}</Link>
