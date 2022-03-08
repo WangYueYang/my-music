@@ -1,13 +1,13 @@
 import { atom, selector } from 'recoil';
-import { apiGetUserAccount } from '@api/index';
+import {Profile} from '@api/index';
 export const isLoginState = atom<boolean>({
   key: 'isLoginState',
   default: false,
 });
 
-export const userAccountState = atom({
+export const userAccountState = atom<Profile>({
   key: 'userAccountState',
-  default: JSON.parse(localStorage.getItem('user')),
+  default: JSON.parse(localStorage.getItem('user') || '{}'),
 });
 
 
