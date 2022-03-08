@@ -9,6 +9,7 @@ import {
   personalizedList,
   artistsList,
   albumNewList,
+  topList,
 } from '@store/index';
 const Home = () => {
   const [playlist, setPlaylist] = useState<Personalized[]>([]);
@@ -16,6 +17,7 @@ const Home = () => {
   const artists = useRecoilValue(artistsList);
   const user = useRecoilValue(userAccountState);
   const albumNew = useRecoilValue(albumNewList);
+  const topLists = useRecoilValue(topList);
   return (
     <>
       <div className="main-page">
@@ -70,12 +72,17 @@ const Home = () => {
         </CoverRow>
         <CoverRow title="排行榜" type="playlist">
           <>
-            {playlist.map((item) => {
+            {topLists.map((item, i) => {
+              if (i > 4) {
+                return;
+              }
+              const describe = item.updateFrequency;
               return (
                 <PlayItem
                   key={item.id}
                   name={item.name}
-                  picUrl={item.picUrl}
+                  picUrl={item.coverImgUrl}
+                  describe={describe}
                 />
               );
             })}

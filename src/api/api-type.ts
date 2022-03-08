@@ -134,3 +134,37 @@ export interface AlubumNewType extends Response {
   total: number;
   albums: AlbumNew[];
 }
+
+// apiGetTopList
+export interface ArtistToplist {
+  coverUrl: string;
+  name: string;
+  postition: number;
+  updateFrequency: string;
+}
+
+export interface ToplistItem {
+  updateFrequency: string;
+  trackNumberUpdateTime: number;
+  subscribedCount: number;
+  userId: number;
+  updateTime: number;
+  coverImgId: number;
+  trackUpdateTime: number;
+  trackCount: number;
+  coverImgUrl: string;
+  commentThreadId: string;
+  ordered: boolean;
+  tags: any[];
+  description: string;
+  status: number;
+  name: string;
+  id: number;
+  coverImgId_str: string;
+  ToplistType: string;
+}
+
+export interface ToplistType extends Response {
+  list: ToplistItem[];
+  artistToplist: ArtistToplist;
+}

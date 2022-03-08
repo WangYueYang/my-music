@@ -7,6 +7,7 @@ import {
   TopArtistType,
   AlbumNewArea,
   AlubumNewType,
+  ToplistType
 } from './api-type';
 
 export * from './api-type';
@@ -72,4 +73,12 @@ export const apiGetAlbumNew = (params: {
   area?: AlbumNewArea;
 }) => {
   return get<AlubumNewType>('/album/new', params);
+};
+
+/* 
+  所有榜单
+  说明 : 调用此接口,可获取所有榜单 接口地址 : /toplist
+*/
+export const apiGetTopList = () => {
+  return get<ToplistType>('/toplist');
 };
