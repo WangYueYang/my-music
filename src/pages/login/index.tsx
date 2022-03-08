@@ -36,7 +36,7 @@ const LoginPage = (): JSX.Element => {
 
   const getQRCode = (): void => {
     apiLoginQRCodeKey().then(({ data }) => {
-      const { unikey } = data.data;
+      const { unikey } = data;
       setQRCodeKey(unikey);
       setQRUrl(`https://music.163.com/login?codekey=${unikey}`);
     });
@@ -56,8 +56,8 @@ const LoginPage = (): JSX.Element => {
   };
 
   const getUserAccount = (): void => {
-    apiGetUserAccount().then(({ data }) => {
-      localStorage.setItem('user', JSON.stringify(data.profile));
+    apiGetUserAccount().then(({ profile }) => {
+      localStorage.setItem('user', JSON.stringify(profile));
     });
   };
 
@@ -65,12 +65,12 @@ const LoginPage = (): JSX.Element => {
     clearInterval(timerRef.current as NodeJS.Timeout);
     timer = setInterval(() => {
       if (!QRCodeKey) return;
-      apiCheckQRCodeLogin(QRCodeKey).then(({ data }) => {
+      apiCheckQRCodeLogin(QRCodeKey).then(({ code, cookie }) => {
         const res: LoginType = {
           code: 0,
           cookie: '',
         };
-        switch (data.code) {
+        switch (code) {
           case 800:
             getQRCode();
             setText('二维码已失效，请重新扫码');
@@ -82,7 +82,7 @@ const LoginPage = (): JSX.Element => {
             clearInterval(timerRef.current as NodeJS.Timeout);
             setText('登录成功，请稍等...');
             res.code = 200;
-            res.cookie = data.cookie.replace('HTTPOnly', '');
+            res.cookie = cookie.replace('HTTPOnly', '');
             handleLoginResponse(res);
             break;
         }
