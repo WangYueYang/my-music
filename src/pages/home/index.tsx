@@ -7,7 +7,7 @@ import { Personalized } from '@api/api-type';
 import { userAccountState, personalizedList } from '@store/index';
 const Home = () => {
   const [playlist, setPlaylist] = useState<Personalized[]>([]);
-  const {result: personalized} = useRecoilValue(personalizedList);
+  const personalized = useRecoilValue(personalizedList);
   const user = useRecoilValue(userAccountState);
 
   return (
@@ -33,7 +33,7 @@ const Home = () => {
             <FMCard />
           </>
         </CoverRow>
-        <CoverRow title="推荐艺人" type="actor-list">
+        <CoverRow title="推荐歌手" type="actor-list">
           <>
             {playlist.map((item, i) => {
               if (i > 5) {

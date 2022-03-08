@@ -1,10 +1,10 @@
 import { post, get } from './api-util';
-
+import { AxiosResponse } from 'axios';
 import {
   PersonalizedType,
   LoginQRCodeKeyType,
   CheckQRCodeLoginType,
-  UserAccountType
+  UserAccountType,
 } from './api-type';
 
 export * from './api-type';
@@ -13,7 +13,7 @@ export * from './api-type';
  * 首页-获取推荐歌单
  */
 export const apiGetPersonalized = (params: { limit: number }) => {
-  return get<PersonalizedType>('/api/personalized', params);
+  return get<PersonalizedType>('/personalized', params);
 };
 /* 
   二维码key生成接口
@@ -22,7 +22,7 @@ export const apiLoginQRCodeKey = () => {
   const params = {
     timestamp: new Date().getTime(),
   };
-  return get<LoginQRCodeKeyType>('/api/login/qr/key', params);
+  return get<LoginQRCodeKeyType>('/login/qr/key', params);
 };
 
 /* 
@@ -34,7 +34,7 @@ export const apiCheckQRCodeLogin = (key: string) => {
     key,
     timestamp: new Date().getTime(),
   };
-  return get<CheckQRCodeLoginType>('/api/login/qr/check', params);
+  return get<CheckQRCodeLoginType>('/login/qr/check', params);
 };
 
 /**
@@ -46,5 +46,16 @@ export const apiGetUserAccount = () => {
     timestamp: new Date().getTime(),
   };
 
-  return get<UserAccountType>('/api/user/account', params);
+  return get<UserAccountType>('/user/account', params);
+};
+
+/* 
+  热门歌手
+  说明 : 调用此接口 , 可获取热门歌手数据
+*/
+export const apiGetTopArtists = (params: {
+  limit: number;
+  offset?: number;
+}) => {
+  return get('/top/artists', params);
 };

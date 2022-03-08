@@ -1,11 +1,11 @@
 import { selector } from 'recoil';
-import { PersonalizedType } from '@api/api-type';
+import { Personalized } from '@api/api-type';
 import { apiGetPersonalized } from '@api/index';
 
-export const personalizedList = selector<PersonalizedType>({
+export const personalizedList = selector<Personalized[]>({
   key: 'personlizedList',
   get: async () => {
-    const res = await apiGetPersonalized({ limit: 10 });
-    return res.data || [];
+    const { result } = await apiGetPersonalized({ limit: 10 });
+    return result || [];
   },
 });
