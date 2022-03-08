@@ -1,11 +1,12 @@
 import { post, get } from './api-util';
-import { AxiosResponse } from 'axios';
 import {
   PersonalizedType,
   LoginQRCodeKeyType,
   CheckQRCodeLoginType,
   UserAccountType,
   TopArtistType,
+  AlbumNewArea,
+  AlubumNewType,
 } from './api-type';
 
 export * from './api-type';
@@ -59,4 +60,16 @@ export const apiGetTopArtists = (params: {
   offset?: number;
 }) => {
   return get<TopArtistType>('/top/artists', params);
+};
+
+/* 
+  全部新碟
+  说明 : 登录后调用此接口 ,可获取全部新碟
+*/
+export const apiGetAlbumNew = (params: {
+  limit: number;
+  offset?: number;
+  area?: AlbumNewArea;
+}) => {
+  return get<AlubumNewType>('/album/new', params);
 };

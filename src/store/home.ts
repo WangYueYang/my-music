@@ -1,6 +1,12 @@
 import { selector } from 'recoil';
 import { Personalized } from '@api/api-type';
-import { apiGetPersonalized, apiGetTopArtists, TopArtist } from '@api/index';
+import {
+  apiGetAlbumNew,
+  apiGetPersonalized,
+  apiGetTopArtists,
+  TopArtist,
+  AlbumNew
+} from '@api/index';
 
 export const personalizedList = selector<Personalized[]>({
   key: 'personlizedList',
@@ -15,5 +21,13 @@ export const artistsList = selector<TopArtist[]>({
   get: async () => {
     const { artists } = await apiGetTopArtists({ limit: 6 });
     return artists || [];
+  },
+});
+
+export const albumNewList = selector<AlbumNew[]>({
+  key: 'albumNewList',
+  get: async () => {
+    const { albums } = await apiGetAlbumNew({ limit: 10 });
+    return albums || [];
   },
 });

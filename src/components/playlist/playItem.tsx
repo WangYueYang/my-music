@@ -8,14 +8,14 @@ import './PlayItem.css';
 type PlayItemProps = {
   name: string;
   picUrl?: string;
-  copywriter?: string | null;
+  describe?: string | null;
   className?: string;
 };
 
 const PlayItem = ({
   picUrl,
   name,
-  copywriter,
+  describe,
   className,
 }: PlayItemProps): JSX.Element => {
   return (
@@ -29,7 +29,7 @@ const PlayItem = ({
         <Link to="/">{name}</Link>
       </p>
 
-      <p className="item-describe">{copywriter}</p>
+      <p className="item-describe">{describe}</p>
     </div>
   );
 };

@@ -86,3 +86,51 @@ export interface TopArtist {
 export interface TopArtistType extends Response {
   artists: TopArtist[];
 }
+
+// apiGetAlbumNew
+export enum AlbumNewArea {
+  ALL = 'ALL',
+  ZH = 'ZH',
+  EA = 'EA',
+  KR = 'KR',
+  JP = 'JP',
+}
+
+export interface AlbumArtist {
+  img1v1Id: number;
+  alias: any[];
+  picId: number;
+  briefDesc: string;
+  picUrl: string;
+  img1v1Url: string;
+  followed: boolean;
+  name: string;
+  id: number;
+  picId_str?: string;
+  img1v1Id_str: string;
+}
+
+export interface AlbumNew {
+  blurPicUrl: string;
+  pic: number;
+  artists: AlbumArtist[];
+  picId: number;
+  artist: AlbumArtist;
+  publishTime: number;
+  company: string;
+  picUrl: string;
+  tags: string;
+  description: string;
+  status: number;
+  subType: string;
+  name: string;
+  id: number;
+  type: string;
+  size: number;
+  picId_str: string;
+}
+
+export interface AlubumNewType extends Response {
+  total: number;
+  albums: AlbumNew[];
+}
