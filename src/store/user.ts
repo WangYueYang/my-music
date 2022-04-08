@@ -1,4 +1,4 @@
-import { atom, selector } from 'recoil';
+import { atom } from 'recoil';
 import {Profile} from '@api/index';
 export const isLoginState = atom<boolean>({
   key: 'isLoginState',

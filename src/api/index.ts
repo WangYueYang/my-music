@@ -8,7 +8,7 @@ import {
   AlbumNewArea,
   AlubumNewType,
   ToplistType,
-  PlaylistDetail
+  PlaylistDetail,
 } from './api-type';
 
 export * from './api-type';
@@ -90,4 +90,12 @@ export const apiGetTopList = () => {
 */
 export const apiGetPlaylistDetail = (params: { id: number; s?: number }) => {
   return get<PlaylistDetail>('/playlist/detail', params);
+};
+
+/* 
+  获取歌曲详情
+  说明 : 调用此接口 , 传入音乐 id(支持多个 id, 用 , 隔开), 可获得歌曲详情
+*/
+export const apiGetSongDetail = (params: { ids: number }) => {
+  return get<any>('/song/detail', params);
 };
