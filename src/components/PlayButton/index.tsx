@@ -19,7 +19,6 @@ const PlayButton = ({ className, id }: PlayButtonProps): JSX.Element => {
   const playClick = () => {
     getPlaylist().then(res => console.log(res));
     setPlayMusicId(id);
-    console.log(id);
   };
 
   return (
