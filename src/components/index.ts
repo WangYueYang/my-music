@@ -5,6 +5,7 @@ import PlayButton from './PlayButton';
 import { CoverRow, PlayItem } from './Playlist';
 import SvgIcon from './SvgIcon';
 import Search from './Search';
+import Player from './Player';
 
 export {
   DailyPush,
@@ -15,4 +16,5 @@ export {
   PlayItem,
   SvgIcon,
   Search,
+  Player,
 };

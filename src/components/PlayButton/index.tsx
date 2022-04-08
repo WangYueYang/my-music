@@ -10,8 +10,12 @@ type PlayButtonProps = {
 };
 
 const PlayButton = ({ className }: PlayButtonProps): JSX.Element => {
+  const playClick = () => {
+    console.log('play click');
+  };
+
   return (
-    <div className={classNames('play-button', className)}>
+    <div className={classNames('play-button', className)} onClick={playClick}>
       <SvgIcon icon={Play} className="play-icon" />
     </div>
   );

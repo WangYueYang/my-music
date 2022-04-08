@@ -21,3 +21,4 @@ export function isLogin(): boolean {
 export function removeCookie(key: string) {
   localStorage.removeItem(`cookie-${key}`);
 }
+

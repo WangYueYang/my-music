@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import RouteFc from './routes';
-import Nav from '@components/Nav';
+import { Player, Nav } from '@components/index';
 
 import '@assets/css/default.css';
 import '@assets/css/common.css';
@@ -11,6 +11,7 @@ const App = () => {
     <Router>
       <Nav />
       <RouteFc />
+      <Player />
     </Router>
   );
 };
