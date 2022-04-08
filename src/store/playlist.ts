@@ -1,6 +1,7 @@
 import { selector, selectorFamily, atomFamily, atom } from 'recoil';
 
 import { apiGetPlaylistDetail } from '@api/index';
+import { TrackType } from '@api/index';
 
 export const getPlaylistDetail = selectorFamily({
   key: 'getPlaylistDetail',
@@ -20,7 +21,7 @@ export const playMusicId = atom<number>({
   default: 0,
 });
 
-export const playlists = atom({
+export const playlists = atom<TrackType[]>({
   key: 'playlists',
   default: [],
 });

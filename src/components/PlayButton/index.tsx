@@ -1,10 +1,10 @@
-import React, { useCallback } from 'react';
-import { useRecoilValue, useRecoilState, useSetRecoilState } from 'recoil';
+import React from 'react';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { Play } from '@assets/img/icons';
 import classNames from 'classnames';
 import SvgIcon from '@components/SvgIcon';
 
-import { playMusicId, getPlaylistDetail } from '@store/index';
+import { playMusicId, getPlaylistDetail, playlists } from '@store/index';
 
 import './index.css';
 
@@ -16,9 +16,13 @@ type PlayButtonProps = {
 const PlayButton = ({ className, id }: PlayButtonProps): JSX.Element => {
   const getPlaylist = useRecoilValue(getPlaylistDetail(id));
   const setPlayMusicId = useSetRecoilState(playMusicId);
+  const setPlaylists = useSetRecoilState(playlists);
   const playClick = () => {
-    getPlaylist().then(res => console.log(res));
-    setPlayMusicId(id);
+    getPlaylist().then((res) => {
+      const { tracks } = res;
+      setPlaylists(tracks);
+      setPlayMusicId(tracks[0].id);
+    });
   };
 
   return (

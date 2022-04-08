@@ -168,3 +168,34 @@ export interface ToplistType extends Response {
   list: ToplistItem[];
   artistToplist: ArtistToplist;
 }
+
+// /playlist/detail
+export interface PlaylistDetail extends Response {
+  playlist: PlaylistType;
+}
+
+export interface PlaylistType {
+  id: number;
+  name: string;
+  coverImgUrl: string;
+  createTime: number;
+  description: string;
+  tags: string[];
+  tracks: TrackType[] | [];
+}
+
+export interface TrackType {
+  name: string;
+  id: number;
+  ar: [
+    {
+      id: number;
+      name: string;
+    }
+  ];
+  al: {
+    id: number;
+    name: string;
+    picUrl: string;
+  };
+}
