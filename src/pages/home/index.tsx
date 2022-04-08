@@ -12,12 +12,12 @@ import {
   topList,
 } from '@store/index';
 const Home = () => {
-  const [playlist, setPlaylist] = useState<Personalized[]>([]);
   const personalized = useRecoilValue(personalizedList);
   const artists = useRecoilValue(artistsList);
   const user = useRecoilValue(userAccountState);
   const albumNew = useRecoilValue(albumNewList);
   const topLists = useRecoilValue(topList);
+
   return (
     <>
       <div className="main-page">
@@ -27,6 +27,7 @@ const Home = () => {
               return (
                 <PlayItem
                   key={item.id}
+                  id={item.id}
                   name={item.name}
                   picUrl={item.picUrl}
                   describe={item.copywriter}
@@ -47,6 +48,7 @@ const Home = () => {
               return (
                 <PlayItem
                   key={item.id}
+                  id={item.id}
                   name={item.name}
                   picUrl={item.picUrl}
                   className="actor-item"
@@ -62,6 +64,7 @@ const Home = () => {
               return (
                 <PlayItem
                   key={item.id}
+                  id={item.id}
                   name={item.name}
                   picUrl={item.picUrl}
                   describe={describe}
@@ -81,6 +84,7 @@ const Home = () => {
                 <PlayItem
                   key={item.id}
                   name={item.name}
+                  id={item.id}
                   picUrl={item.coverImgUrl}
                   describe={describe}
                 />

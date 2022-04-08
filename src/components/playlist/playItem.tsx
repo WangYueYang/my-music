@@ -10,6 +10,7 @@ type PlayItemProps = {
   picUrl?: string;
   describe?: string | null;
   className?: string;
+  id: number;
 };
 
 const PlayItem = ({
@@ -17,11 +18,13 @@ const PlayItem = ({
   name,
   describe,
   className,
+  id
 }: PlayItemProps): JSX.Element => {
+
   return (
     <div className={classNames(className, 'play-item')}>
       <div className="item-img">
-        <PlayButton />
+        <PlayButton id={id}/>
         <img src={`${picUrl}?param=320y320`} alt="" />
         <img src={`${picUrl}?param=320y320`} alt="" className="bg" />
       </div>

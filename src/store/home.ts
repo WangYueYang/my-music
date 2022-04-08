@@ -15,7 +15,7 @@ export const personalizedList = selector<Personalized[]>({
   key: 'personlizedList',
   get: async () => {
     const { result } = await apiGetPersonalized({ limit: 10 });
-    return result || [];
+    return result;
   },
 });
 
