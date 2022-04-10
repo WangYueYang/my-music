@@ -181,30 +181,30 @@ export interface PlaylistType {
   createTime: number;
   description: string;
   tags: string[];
-  tracks: TrackType[] | [];
+  tracks: TrackType[];
 }
 
 export interface TrackType {
   name: string;
   id: number;
-  ar: [
-    {
-      id: number;
-      name: string;
-    }
-  ];
-  al: {
-    id: number;
-    name: string;
-    picUrl: string;
-  };
+  ar: ar[];
+  al: al;
 }
 
+type ar = {
+  id: number;
+  name: string;
+};
+
+type al = ar & {
+  picUrl: string;
+};
+
 // /song/url
-export interface ISongUrl extends Response {
-  data: ISongUrlDetail[];
+export interface ISongsUrl extends Response {
+  data: ISongsUrlDetail[];
 }
-export interface ISongUrlDetail {
+export interface ISongsUrlDetail {
   id: number;
   url: string;
   br: number;
@@ -223,4 +223,15 @@ export interface ISongUrlDetail {
   level: string;
   encodeType: string;
   urlSource: number;
+}
+
+// /song/detail
+export interface ISongsDetail extends Response {
+  songs: ISongsPlayDetail[];
+}
+
+export interface ISongsPlayDetail {
+  al: al;
+  ar: ar[];
+  name: number;
 }

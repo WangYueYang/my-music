@@ -1,0 +1,16 @@
+.player {
+  position:fixed;
+  bottom: 0;
+  background: var(--colorNavBg);
+  width: 100%;
+
+  & .progress-bar {
+    height: 1px;
+    background: #373737;
+  }
+
+  & .controls {
+    box-sizing: border;
+    padding: 0 10vw;
+  }
+}

@@ -1,6 +1,6 @@
 import { selector, selectorFamily, atomFamily, atom } from 'recoil';
 
-import { apiGetPlaylistDetail, ISongUrlDetail } from '@api/index';
+import { apiGetPlaylistDetail, ISongsUrlDetail, ISongsPlayDetail } from '@api/index';
 import { TrackType } from '@api/index';
 
 export const getPlaylistDetail = selectorFamily({
@@ -26,7 +26,12 @@ export const playlists = atom<TrackType[]>({
   default: [],
 });
 
-export const playSongUrl = atom<ISongUrlDetail[]>({
-  key: 'playSongUrl',
+export const playSongsUrl = atom<ISongsUrlDetail[]>({
+  key: 'playSongsUrl',
+  default: [],
+});
+
+export const playSongsDetail = atom<ISongsPlayDetail[]>({
+  key: 'playSongsDetail',
   default: [],
 });

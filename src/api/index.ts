@@ -9,7 +9,8 @@ import {
   AlubumNewType,
   ToplistType,
   PlaylistDetail,
-  ISongUrl,
+  ISongsUrl,
+  ISongsDetail,
 } from './api-type';
 
 export * from './api-type';
@@ -98,7 +99,7 @@ export const apiGetPlaylistDetail = (params: { id: number; s?: number }) => {
   说明 : 调用此接口 , 传入音乐 id(支持多个 id, 用 , 隔开), 可获得歌曲详情
 */
 export const apiGetSongDetail = (params: { ids: number }) => {
-  return get('/song/detail', params);
+  return get<ISongsDetail>('/song/detail', params);
 };
 
 /* 
@@ -108,5 +109,5 @@ export const apiGetSongDetail = (params: { ids: number }) => {
   可选参数 : br: 码率,默认设置了 999000 即最大码率,如果要 320k 则可设置为 320000,其他类推
 */
 export const apiGetSongUrl = (params: { id: number; br?: number }) => {
-  return get<ISongUrl>('/song/url', params);
+  return get<ISongsUrl>('/song/url', params);
 };
