@@ -4,7 +4,8 @@ import { Play } from '@assets/img/icons';
 import classNames from 'classnames';
 import SvgIcon from '@components/SvgIcon';
 
-import { playMusicId, getPlaylistDetail, playlists } from '@store/index';
+import { playMusicId, getPlaylistDetail, playlists, playSongUrl } from '@store/index';
+import { apiGetSongUrl } from '@api/index';
 
 import './index.css';
 
@@ -17,11 +18,17 @@ const PlayButton = ({ className, id }: PlayButtonProps): JSX.Element => {
   const getPlaylist = useRecoilValue(getPlaylistDetail(id));
   const setPlayMusicId = useSetRecoilState(playMusicId);
   const setPlaylists = useSetRecoilState(playlists);
+  const setPlaySongUrl = useSetRecoilState(playSongUrl);
   const playClick = () => {
     getPlaylist().then((res) => {
       const { tracks } = res;
       setPlaylists(tracks);
       setPlayMusicId(tracks[0].id);
+
+      apiGetSongUrl({ id: tracks[0].id }).then((res) => {
+        const {data} = res;
+        setPlaySongUrl(data);
+      });
     });
   };
 

@@ -199,3 +199,28 @@ export interface TrackType {
     picUrl: string;
   };
 }
+
+// /song/url
+export interface ISongUrl extends Response {
+  data: ISongUrlDetail[];
+}
+export interface ISongUrlDetail {
+  id: number;
+  url: string;
+  br: number;
+  size: number;
+  md5: string;
+  code: number;
+  expi: number;
+  type: string;
+  gain: number;
+  fee: number;
+  uf: null;
+  payed: number;
+  flag: number;
+  canExtend: boolean;
+  freeTrialInfo: null;
+  level: string;
+  encodeType: string;
+  urlSource: number;
+}

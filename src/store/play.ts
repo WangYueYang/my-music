@@ -1,6 +1,6 @@
 import { selector, selectorFamily, atomFamily, atom } from 'recoil';
 
-import { apiGetPlaylistDetail, apiGetSongDetail } from '@api/index';
+import { apiGetPlaylistDetail, ISongUrlDetail } from '@api/index';
 import { TrackType } from '@api/index';
 
 export const getPlaylistDetail = selectorFamily({
@@ -26,15 +26,7 @@ export const playlists = atom<TrackType[]>({
   default: [],
 });
 
-export const getSongDetail = selectorFamily({
-  key: 'getSongDetail',
-  get:
-    (ids: number) =>
-    async ({ getCallback }) => {
-      const cb = getCallback(() => async () => {
-        const { data } = await apiGetSongDetail({ ids });
-        return data;
-      });
-      return cb;
-    },
+export const playSongUrl = atom<ISongUrlDetail[]>({
+  key: 'playSongUrl',
+  default: [],
 });
